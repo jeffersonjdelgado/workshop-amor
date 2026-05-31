@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Por que o amor não é suficiente? | Workshop · 27 de Junho</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose: #C4506A;
+    --rose-dk: #8A2A40;
+    --rose-lt: #F5E6EA;
+    --warm: #FDF7F4;
+    --ink: #1E1412;
+    --muted: #6B5050;
+    --border: #E8D5D0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lora', serif;
+    background: var(--warm);
+    color: var(--ink);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── COUNTDOWN STRIP ── */
+  .countdown-strip {
+    background: var(--ink);
+    color: #fff;
+    text-align: center;
+    padding: 12px 24px;
+    font-family: 'Lora', serif;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .countdown-strip .label {
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+  }
+
+  .countdown-boxes {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .cd-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 44px;
+  }
+
+  .cd-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .cd-label {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2px;
+  }
+
+  .cd-sep {
+    font-size: 22px;
+    color: var(--rose);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 80px 24px 64px;
+    text-align: center;
+    position: relative;
+    background: var(--warm);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, var(--border), transparent);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 28px;
+  }
+
+  .eyebrow::before,
+  .eyebrow::after {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--rose);
+    opacity: 0.5;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 68px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--ink);
+    max-width: 720px;
+    margin: 0 auto 10px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-style: italic;
+    color: var(--muted);
+    font-weight: 400;
+    max-width: 520px;
+    margin: 0 auto 48px;
+  }
+
+  /* ── PAIN SECTION ── */
+  .pain {
+    background: var(--ink);
+    padding: 72px 24px;
+    text-align: center;
+  }
+
+  .pain h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 40px);
+    color: #fff;
+    font-weight: 600;
+    max-width: 640px;
+    margin: 0 auto 16px;
+    line-height: 1.25;
+  }
+
+  .pain h2 em {
+    color: var(--rose);
+    font-style: italic;
+  }
+
+  .pain-intro {
+    font-size: 16px;
+    color: rgba(255,255,255,0.5);
+    font-style: italic;
+    margin-bottom: 48px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    max-width: 860px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .pain-item {
+    padding: 28px 28px 28px 24px;
+    background: rgba(255,255,255,0.03);
+    text-align: left;
+    position: relative;
+  }
+
+  .pain-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--rose);
+    opacity: 0.5;
+  }
+
+  .pain-item p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.65;
+    font-style: italic;
+  }
+
+  .pain-item p strong {
+    color: #fff;
+    font-style: normal;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── QUOTE BRIDGE ── */
+  .bridge {
+    padding: 72px 24px;
+    text-align: center;
+    background: var(--warm);
+    position: relative;
+  }
+
+  .quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    color: var(--rose);
+    opacity: 0.2;
+    line-height: 0.5;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 3.5vw, 30px);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+    max-width: 680px;
+    margin: 0 auto 20px;
+    line-height: 1.5;
+  }
+
+  blockquote em {
+    color: var(--rose);
+    font-style: normal;
+  }
+
+  .quote-attr {
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── SOLUTION ── */
+  .solution {
+    background: var(--rose-lt);
+    padding: 72px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .solution h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4vw, 38px);
+    font-weight: 700;
+    color: var(--ink);
+    max-width: 600px;
+    margin: 0 auto 12px;
+    line-height: 1.25;
+  }
+
+  .solution h2 em {
+    color: var(--rose);
+    font-style: italic;
+  }
+
+  .solution-intro {
+    font-size: 16px;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 44px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .learn-list {
+    list-style: none;
+    max-width: 560px;
+    margin: 0 auto 44px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .learn-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  .learn-list li::before {
+    content: '→';
+    color: var(--rose);
+    font-size: 14px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  /* ── CTA BOX ── */
+  .cta-wrap {
+    padding: 72px 24px;
+    text-align: center;
+    background: var(--warm);
+  }
+
+  .cta-box {
+    max-width: 520px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 48px 40px;
+    box-shadow: 0 8px 48px rgba(196,80,106,0.08);
+  }
+
+  .date-badge {
+    display: inline-block;
+    background: var(--rose-lt);
+    color: var(--rose-dk);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .price-display {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--rose);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .price-display sup {
+    font-size: 28px;
+    vertical-align: super;
+  }
+
+  .price-note {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  .btn-cta {
+    display: block;
+    background: var(--rose);
+    color: #fff;
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 18px 40px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(196,80,106,0.28);
+    margin-bottom: 14px;
+  }
+
+  .btn-cta:hover {
+    background: var(--rose-dk);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(196,80,106,0.35);
+  }
+
+  .cta-guarantee {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    background: var(--ink);
+    padding: 64px 24px;
+    text-align: center;
+  }
+
+  .about p {
+    max-width: 560px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: rgba(255,255,255,0.65);
+    font-style: italic;
+    line-height: 1.8;
+  }
+
+  .about strong {
+    color: #fff;
+    font-style: normal;
+  }
+
+  .about .sig {
+    margin-top: 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    padding: 72px 24px;
+    text-align: center;
+    background: var(--warm);
+  }
+
+  .final-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 700;
+    max-width: 560px;
+    margin: 0 auto 12px;
+    line-height: 1.3;
+  }
+
+  .final-cta h2 em {
+    color: var(--rose);
+    font-style: italic;
+  }
+
+  .final-cta p {
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 32px;
+    font-size: 16px;
+  }
+
+  .btn-final {
+    display: inline-block;
+    background: var(--rose);
+    color: #fff;
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 18px 48px;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(196,80,106,0.28);
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-final:hover {
+    background: var(--rose-dk);
+    transform: translateY(-2px);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .cta-box { padding: 36px 24px; }
+    .pain-grid { grid-template-columns: 1fr; }
+    .countdown-strip { gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COUNTDOWN -->
+<div class="countdown-strip">
+  <span class="label">O workshop acontece em</span>
+  <div class="countdown-boxes">
+    <div class="cd-box">
+      <span class="cd-num" id="cd-d">00</span>
+      <span class="cd-label">dias</span>
+    </div>
+    <span class="cd-sep">:</span>
+    <div class="cd-box">
+      <span class="cd-num" id="cd-h">00</span>
+      <span class="cd-label">horas</span>
+    </div>
+    <span class="cd-sep">:</span>
+    <div class="cd-box">
+      <span class="cd-num" id="cd-m">00</span>
+      <span class="cd-label">min</span>
+    </div>
+    <span class="cd-sep">:</span>
+    <div class="cd-box">
+      <span class="cd-num" id="cd-s">00</span>
+      <span class="cd-label">seg</span>
+    </div>
+  </div>
+  <span style="color:rgba(255,255,255,0.4)">27 de junho</span>
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">Workshop Online · 27 de Junho</div>
+  <h1>Por que o amor <em>não é suficiente?</em></h1>
+  <p class="hero-sub">Como entender a linguagem emocional do outro e transformar sua relação</p>
+  <a href="https://pay.kiwify.com.br/aN9QkQE" class="btn-cta" style="display:inline-block;max-width:360px;margin:0 auto;">
+    Quero participar · R$37
+  </a>
+</section>
+
+
+<!-- DOR -->
+<section class="pain">
+  <h2>Você ama. E ainda assim, <em>algo dói.</em></h2>
+  <p class="pain-intro">Você não está em falta. Ninguém te ensinou isso.</p>
+
+  <div class="pain-grid">
+    <div class="pain-item">
+      <p><strong>Você faz tudo pela pessoa</strong> e ela ainda se sente sozinha. Você se esforça. Ela não percebe. E ninguém está mentindo.</p>
+    </div>
+    <div class="pain-item">
+      <p><strong>As brigas são sempre sobre coisas pequenas.</strong> Prato sujo. Horário. Ciúme sem motivo. Mas a ferida que fica é grande demais.</p>
+    </div>
+    <div class="pain-item">
+      <p><strong>Há amor na relação.</strong> Mas também há um vazio que ninguém consegue nomear. E esse vazio vai crescendo em silêncio.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- PONTE -->
+<section class="bridge">
+  <span class="quote-mark">"</span>
+  <blockquote>
+    A maioria das relações não termina por falta de amor.<br>
+    Termina porque as pessoas <em>falam linguagens emocionais diferentes.</em>
+  </blockquote>
+  <p class="quote-attr">Jefferson Delgado · Terapeuta</p>
+</section>
+
+
+<!-- SOLUÇÃO -->
+<section class="solution">
+  <h2>Em 1 hora, você vai entender <em>o que está acontecendo</em></h2>
+  <p class="solution-intro">Não é mais uma lista de dicas. É o entendimento que muda tudo.</p>
+
+  <ul class="learn-list">
+    <li>Por que pessoas que se amam ainda se machucam, e o que a neurociência diz sobre isso</li>
+    <li>As 5 linguagens do amor e como descobrir qual é a sua, e a do seu parceiro</li>
+    <li>O tanque emocional: por que as brigas raramente são sobre o que parecem ser</li>
+    <li>Um exercício prático que pode abrir a conversa mais importante que vocês já tiveram</li>
+  </ul>
+
+  <a href="https://pay.kiwify.com.br/aN9QkQE" class="btn-cta" style="display:inline-block;max-width:380px;margin:0 auto;">
+    Quero entender minha relação · R$37
+  </a>
+</section>
+
+
+<!-- CTA BOX -->
+<section class="cta-wrap">
+  <div class="cta-box">
+    <span class="date-badge">27 de Junho · Acesso imediato</span>
+    <div class="price-display"><sup>R$</sup>37</div>
+    <p class="price-note">Pagamento único · Workshop gravado · Acesso permanente</p>
+    <a href="https://pay.kiwify.com.br/aN9QkQE" class="btn-cta">
+      Garantir minha vaga agora →
+    </a>
+    <p class="cta-guarantee">Pagamento seguro via Kiwify</p>
+  </div>
+</section>
+
+
+<!-- QUEM SOU -->
+<section class="about">
+  <p>
+    <strong>Jefferson Delgado.</strong> Terapeuta especializado em regulação emocional e ansiedade.
+    Moro no Reino Unido há mais de 14 anos e trabalho todos os dias com pessoas
+    que chegam até mim carregando a dor de amar alguém de verdade
+    e ainda assim não conseguir fazer aquela relação funcionar.<br><br>
+    Esse workshop existe porque <strong>isso tem explicação.</strong> E quando você entende o que está acontecendo,
+    tudo muda.
+  </p>
+  <p class="sig">Jefferson</p>
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Você está a um clique de entender<br><em>por que amar não basta</em></h2>
+  <p>27 de junho. Uma hora. R$37.</p>
+  <a href="https://pay.kiwify.com.br/aN9QkQE" class="btn-final">Quero participar do workshop →</a>
+</section>
+
+
+<footer>
+  © Jefferson Delgado · Raiz do Sentir ·
+  <a href="https://instagram.com/raizdosentir" style="color:var(--rose)">@raizdosentir</a>
+</footer>
+
+
+<script>
+  // Contagem regressiva para 27/06/2026 às 20h (horário de Brasília)
+  const target = new Date('2026-06-27T20:00:00-03:00').getTime();
+
+  function updateCountdown() {
+    const now = Date.now();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      document.querySelector('.countdown-strip').innerHTML =
+        '<span style="color:#fff;font-style:italic">O workshop está acontecendo agora!</span>';
+      return;
+    }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('cd-d').textContent = String(d).padStart(2, '0');
+    document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
