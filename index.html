@@ -3,179 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso para Casais</title>
+    <title>Workshop - Por que o amor não é o suficiente</title>
     <style>
-        /* Reset e estilos base */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f9f5f0; color: #333; line-height: 1.6; }
-
-        /* Container */
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        /* Header */
-        header { background: #fff; padding: 20px 0; border-bottom: 1px solid #e8c4b8; }
-        header .container { display: flex; justify-content: space-between; align-items: center; }
-        header h1 { font-size: 1.5rem; color: #2c3e50; }
-        header nav a { margin-left: 20px; color: #2c3e50; text-decoration: none; font-weight: bold; }
-
-        /* Hero */
-        .hero { background: #f3e7e0; padding: 80px 0; text-align: center; }
-        .hero h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; }
-
-        /* Benefícios */
-        .benefits { padding: 60px 0; text-align: center; }
-        .benefits .grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
-        .benefits .card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); flex: 1; min-width: 250px; }
-
-        /* Instructor section - modificar conforme solicitação */
-        .instructor {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background: #fff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-            margin: 60px 0;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
         }
 
-        .instructor__photo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            flex-shrink: 0;
-            border: 3px solid #e8c4b8;
-        }
-
-        .instructor__info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-            color: #2c3e50;
-        }
-
-        .instructor__info .badge {
-            display: inline-block;
-            background: #e8c4b8;
-            color: #2c3e50;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-
-        .instructor__info p {
-            color: #555;
+        body {
+            background-color: #0f111a;
+            color: #e2e8f0;
             line-height: 1.6;
         }
 
-        /* Testemunhos */
-        .testimonials { padding: 60px 0; }
-        .testimonial { background: #fff; padding: 30px; border-radius: 10px; margin-bottom: 20px; }
-
-        /* Preço */
-        .pricing { padding: 60px 0; text-align: center; }
-        .pricing .price-box { background: #fff; display: inline-block; padding: 40px; border-radius: 15px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
-        .pricing .price { font-size: 3rem; color: #e74c3c; margin: 20px 0; }
-        .pricing .btn { background: #e74c3c; color: #fff; padding: 15px 40px; border: none; border-radius: 30px; font-size: 1.2rem; cursor: pointer; }
-
-        /* Footer */
-        footer { background: #2c3e50; color: #fff; text-align: center; padding: 20px 0; margin-top: 40px; }
-
-        /* Responsivo */
-        @media (max-width: 768px) {
-            .instructor { flex-direction: column; text-align: center; }
+        .container {
+            width: 90%;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 40px 0;
         }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>Curso Conexão Casal</h1>
-            <nav>
-                <a href="#">Início</a>
-                <a href="#">Sobre</a>
-                <a href="#">Depoimentos</a>
-                <a href="#">Inscreva-se</a>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <h2>Recupere a intimidade e a confiança no seu relacionamento</h2>
-            <p>Método comprovado para casais que desejam sair do ciclo de conflitos e construir uma parceria saudável.</p>
-            <a href="#" class="btn">Quero participar</a>
-        </div>
-    </section>
+        /* Header / Pain Section */
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
 
-    <!-- Benefícios -->
-    <section class="benefits">
-        <div class="container">
-            <h2>O que você vai aprender</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Comunicação Não-Violenta</h3>
-                    <p>Aprenda a expressar suas necessidades sem atacar o outro.</p>
-                </div>
-                <div class="card">
-                    <h3>Reconexão Emocional</h3>
-                    <p>Técnicas para resgatar a intimidade e o carinho do início.</p>
-                </div>
-                <div class="card">
-                    <h3>Resolução de Conflitos</h3>
-                    <p>Transforme discussões em conversas construtivas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        .badge {
+            background-color: #ff3366;
+            color: #fff;
+            padding: 6px 16px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
 
-    <!-- Seção "Quem vai conduzir" - MODIFICADA (agora com foto real) -->
-    <div class="container">
-        <div class="instructor">
-            <img src="https://adapta-one-prod.s3.sa-east-1.amazonaws.com/jeffersonjdelgado%40gmail.com/jpg/b12eb1a5-a00b-4a23-8b6d-11e2f697dc54.jpg" alt="Jefferson Delgado" class="instructor__photo">
-            <div class="instructor__info">
-                <h3>Jefferson Delgado</h3>
-                <div class="badge">Terapeuta de Casais · CRP 12/34567</div>
-                <p>Há mais de 12 anos ajudando casais a saírem do ciclo de dor e distanciamento...</p>
-            </div>
-        </div>
-    </div>
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.25;
+            color: #ffffff;
+            margin-bottom: 24px;
+        }
 
-    <!-- Depoimentos -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>O que dizem nossos alunos</h2>
-            <div class="testimonial">
-                <p>"O curso transformou nosso casamento. Voltamos a nos entender e rir juntos." - Maria e João</p>
-            </div>
-            <div class="testimonial">
-                <p>"As ferramentas são práticas e mudaram a dinâmica da nossa casa." - Ana e Carlos</p>
-            </div>
-        </div>
-    </section>
+        h1 span {
+            color: #ff3366;
+        }
 
-    <!-- Preço -->
-    <section class="pricing">
-        <div class="container">
-            <h2>Invista no seu relacionamento</h2>
-            <div class="price-box">
-                <p>Acesso vitalício ao curso completo</p>
-                <div class="price">R$ 197</div>
-                <p>ou 12x de R$ 19,70</p>
-                <button class="btn">Garantir minha vaga</button>
-            </div>
-        </div>
-    </section>
+        .pain-points {
+            background: #161925;
+            border-left: 4px solid #ff3366;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            text-align: left;
+        }
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Conexão Casal. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-</body>
-</html>
+        .pain-points p {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #cbd5e1;
+        }
+
+        .pain-points p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Offer Details */
+        .offer-box {
+            background: linear-gradient(145deg, #1e2235, #161925);
+            border: 1px solid #2e344d;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .info-list {
+            list-style: none;
+            text-align: left;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        .info-list li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            color: #94a3b8;
+        }
+
+        .info-list li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+
+        .price-tag {
+            margin: 25px 0 15px 0;
+        }
+
+        .price-tag .old-price {
+            text-decoration: line-through;
+            color: #64748b;
+            font-size: 1rem;
+            display: block;
+        }
+
+        .price-tag .current-price {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            display: block;
+            line-height: 1;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: block;
+            background: #10b981;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 18px 30px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.3);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        .security-
