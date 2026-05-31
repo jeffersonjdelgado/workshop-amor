@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop - Por que o amor não é o suficiente</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0f111a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .badge {
+            background-color: #ff3366;
+            color: #fff;
+            padding: 6px 16px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.25;
+            color: #ffffff;
+            margin-bottom: 24px;
+        }
+
+        h1 span {
+            color: #ff3366;
+        }
+
+        .pain-points {
+            background: #161925;
+            border-left: 4px solid #ff3366;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .pain-points p {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #cbd5e1;
+        }
+
+        .pain-points p:last-child {
+            margin-bottom: 0;
+        }
+
+        .offer-box {
+            background: linear-gradient(145deg, #1e2235, #161925);
+            border: 1px solid #2e344d;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .info-list {
+            list-style: none;
+            text-align: left;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        .info-list li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            color: #94a3b8;
+        }
+
+        .info-list li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+
+        .price-tag {
+            margin: 25px 0 15px 0;
+        }
+
+        .price-tag .old-price {
+            text-decoration: line-through;
+            color: #64748b;
+            font-size: 1rem;
+            display: block;
+        }
+
+        .price-tag .current-price {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            display: block;
+            line-height: 1;
+        }
+
+        .cta-button {
+            display: block;
+            background: #10b981;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 18px 30px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.3);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        .security-text {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 12px;
+            display: block;
+        }
+
+        .about-section {
+            border-top: 1px solid #2e344d;
+            padding-top: 35px;
+            margin-top: 10px;
+        }
+
+        .profile-container {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff3366;
+            margin-bottom: 15px;
+        }
+
+        .about-section h3 {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .about-section p {
+            font-size: 1rem;
+            color: #94a3b8;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #475569;
+            margin-top: 50px;
+            border-top: 1px solid #1e2235;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <span class="badge">Workshop Exclusivo</span>
+            <h1>Por que o amor <span>não é o suficiente</span>?</h1>
+            
+            <div class="pain-points">
+                <p>⚠️ Você já percebeu que amar alguém não impede as brigas constantes, a falta de alinhamento e o desgaste emocional?</p>
+                <p>A verdade que ninguém te conta é que relacionamentos duradouros e saudáveis exigem ferramentas práticas que vão muito além do sentimento.</p>
+            </div>
+        </header>
+
+        <main class="offer-box">
+            <ul class="info-list">
+                <li><strong>Acesso imediato:</strong> Workshop 100% gravado</li>
+                <li><strong>Data de liberação:</strong> 27 de Junho</li>
+                <li><strong>Tempo de acesso:</strong> Assista no seu ritmo por 1 ano</li>
+                <li><strong>Direto ao ponto:</strong> Sem enrolação e sem PDFs adicionais</li>
+            </ul>
+
+            <div class="price-tag">
+                <span class="old-price">De R$ 97</span>
+                <span class="current-price">R$ 37</span>
+            </div>
+
+            <a href="SEU_LINK_DE_CHECKOUT_DA_KIWIFY_AQUI" class="cta-button">Quero Acesso Imediato</a>
+            <span class="security-text">🔒 Pagamento 100% seguro via Kiwify</span>
+        </main>
+
+        <section class="about-section">
+            <div class="profile-container">
+                <img class="profile-img" src="foto-perfil.jpg" alt="Minha Foto">
+                <h3>Sobre o Instrutor</h3>
+                <p>Comprometido em decifrar as dinâmicas reais por trás das relações humanas e entregar a você a clareza prática necessária para construir conexões verdadeiras e blindadas.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Todos os direitos reservados. Hospedado via GitHub Pages.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
