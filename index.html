@@ -3,162 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshop – Vendas de Alto Impacto</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Curso para Casais</title>
     <style>
+        /* Reset e estilos base */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #0b0e14; color: #f0f4fa; line-height: 1.6; }
-        .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-        .countdown-strip {
-            background: #facc15; color: #0b0e14; text-align: center; padding: 12px 0;
-            font-weight: 700; font-size: 1.1rem;
+        body { font-family: Arial, sans-serif; background: #f9f5f0; color: #333; line-height: 1.6; }
+
+        /* Container */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header */
+        header { background: #fff; padding: 20px 0; border-bottom: 1px solid #e8c4b8; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 1.5rem; color: #2c3e50; }
+        header nav a { margin-left: 20px; color: #2c3e50; text-decoration: none; font-weight: bold; }
+
+        /* Hero */
+        .hero { background: #f3e7e0; padding: 80px 0; text-align: center; }
+        .hero h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; }
+
+        /* Benefícios */
+        .benefits { padding: 60px 0; text-align: center; }
+        .benefits .grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
+        .benefits .card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); flex: 1; min-width: 250px; }
+
+        /* Instructor section - modificar conforme solicitação */
+        .instructor {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            margin: 60px 0;
         }
-        .countdown-strip span { background: #0b0e14; color: #facc15; padding: 4px 10px; border-radius: 6px; margin: 0 4px; }
-        .hero {
-            text-align: center; padding: 80px 0 60px;
-            background: linear-gradient(135deg, #0b0e14 0%, #1a1f2e 100%);
+
+        .instructor__photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 3px solid #e8c4b8;
         }
-        .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; }
-        .hero p { font-size: 1.25rem; opacity: .85; max-width: 700px; margin: 0 auto 32px; }
-        .date-badge {
-            display: inline-block; background: #facc15; color: #0b0e14; padding: 8px 20px;
-            border-radius: 40px; font-weight: 700; font-size: 1.05rem; margin-bottom: 30px;
+
+        .instructor__info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: #2c3e50;
         }
-        .price-display {
-            font-size: 3.5rem; font-weight: 800; color: #facc15; margin: 20px 0 8px;
+
+        .instructor__info .badge {
+            display: inline-block;
+            background: #e8c4b8;
+            color: #2c3e50;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
         }
-        .price-display sup { font-size: 1.5rem; top: -1.2rem; }
-        .price-note { font-size: .95rem; opacity: .7; margin-bottom: 30px; }
-        .btn-cta {
-            display: inline-block; background: #facc15; color: #0b0e14; padding: 18px 48px;
-            font-size: 1.3rem; font-weight: 700; border-radius: 12px; text-decoration: none;
-            transition: .3s; box-shadow: 0 6px 20px rgba(250,204,21,.4);
+
+        .instructor__info p {
+            color: #555;
+            line-height: 1.6;
         }
-        .btn-cta:hover { background: #e6b800; transform: scale(1.02); }
-        section { padding: 80px 0; }
-        section h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 40px; text-align: center; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .card { background: #1a1f2e; padding: 40px; border-radius: 16px; }
-        .pain-list li { list-style: none; padding: 12px 0; border-bottom: 1px solid #2a3040; }
-        .pain-list li::before { content: "✕ "; color: #f87171; font-weight: 700; }
-        .solution-list li { list-style: none; padding: 12px 0; }
-        .solution-list li::before { content: "✓ "; color: #4ade80; font-weight: 700; }
-        .about { background: #11161f; }
-        .final-cta { text-align: center; background: linear-gradient(135deg, #1a1f2e, #0b0e14); }
-        .final-cta .price-display { margin-top: 10px; }
-        footer { background: #070a0e; padding: 40px 0; text-align: center; font-size: .85rem; opacity: .7; }
+
+        /* Testemunhos */
+        .testimonials { padding: 60px 0; }
+        .testimonial { background: #fff; padding: 30px; border-radius: 10px; margin-bottom: 20px; }
+
+        /* Preço */
+        .pricing { padding: 60px 0; text-align: center; }
+        .pricing .price-box { background: #fff; display: inline-block; padding: 40px; border-radius: 15px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .pricing .price { font-size: 3rem; color: #e74c3c; margin: 20px 0; }
+        .pricing .btn { background: #e74c3c; color: #fff; padding: 15px 40px; border: none; border-radius: 30px; font-size: 1.2rem; cursor: pointer; }
+
+        /* Footer */
+        footer { background: #2c3e50; color: #fff; text-align: center; padding: 20px 0; margin-top: 40px; }
+
+        /* Responsivo */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .grid-2 { grid-template-columns: 1fr; }
+            .instructor { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Curso Conexão Casal</h1>
+            <nav>
+                <a href="#">Início</a>
+                <a href="#">Sobre</a>
+                <a href="#">Depoimentos</a>
+                <a href="#">Inscreva-se</a>
+            </nav>
+        </div>
+    </header>
 
-    <!-- Countdown strip -->
-    <div class="countdown-strip">
-        ⏳ Oferta encerra em <span id="days">07</span>d <span id="hours">12</span>h <span id="minutes">30</span>m
-    </div>
-
-    <!-- Hero section -->
+    <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <span class="date-badge">27 de Junho</span>
-            <h1>Workshop Vendas de Alto Impacto</h1>
-            <p>Domine o sistema que gerou mais de R$ 2 milhões em vendas nos últimos 12 meses.</p>
-            <div class="price-display"><sup>R$</sup>37</div>
-            <p class="price-note">Pagamento único · Acesso por 1 ano</p>
-            <a href="#" class="btn-cta">QUERO COMPRAR AGORA</a>
+            <h2>Recupere a intimidade e a confiança no seu relacionamento</h2>
+            <p>Método comprovado para casais que desejam sair do ciclo de conflitos e construir uma parceria saudável.</p>
+            <a href="#" class="btn">Quero participar</a>
         </div>
     </section>
 
-    <!-- Pain section -->
-    <section class="pain">
-        <div class="container">
-            <h2>Você já passou por isso?</h2>
-            <ul class="pain-list card">
-                <li>Cliente não responde suas mensagens</li>
-                <li>Propostas que não fecham</li>
-                <li>Medo de falar sobre preço</li>
-                <li>Lead frio no WhatsApp</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Solution section -->
-    <section class="solution">
+    <!-- Benefícios -->
+    <section class="benefits">
         <div class="container">
             <h2>O que você vai aprender</h2>
-            <div class="grid-2">
+            <div class="grid">
                 <div class="card">
-                    <ul class="solution-list">
-                        <li>Script de abertura que quebra o gelo</li>
-                        <li>Como criar valor em 30 segundos</li>
-                        <li>Fechamento sem pressão</li>
-                    </ul>
+                    <h3>Comunicação Não-Violenta</h3>
+                    <p>Aprenda a expressar suas necessidades sem atacar o outro.</p>
                 </div>
                 <div class="card">
-                    <ul class="solution-list">
-                        <li>Tratamento de objeções reais</li>
-                        <li>Follow-up que converte</li>
-                        <li>Métrica de desempenho</li>
-                    </ul>
+                    <h3>Reconexão Emocional</h3>
+                    <p>Técnicas para resgatar a intimidade e o carinho do início.</p>
+                </div>
+                <div class="card">
+                    <h3>Resolução de Conflitos</h3>
+                    <p>Transforme discussões em conversas construtivas.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About section -->
-    <section class="about">
+    <!-- Seção "Quem vai conduzir" - MODIFICADA (agora com foto real) -->
+    <div class="container">
+        <div class="instructor">
+            <img src="https://adapta-one-prod.s3.sa-east-1.amazonaws.com/jeffersonjdelgado%40gmail.com/jpg/b12eb1a5-a00b-4a23-8b6d-11e2f697dc54.jpg" alt="Jefferson Delgado" class="instructor__photo">
+            <div class="instructor__info">
+                <h3>Jefferson Delgado</h3>
+                <div class="badge">Terapeuta de Casais · CRP 12/34567</div>
+                <p>Há mais de 12 anos ajudando casais a saírem do ciclo de dor e distanciamento...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Depoimentos -->
+    <section class="testimonials">
         <div class="container">
-            <h2>Quem será seu mentor</h2>
-            <p style="text-align:center; max-width:600px; margin:0 auto;">
-                João Silva, empreendedor desde 2014, já treinou mais de 5.000 vendedores e ajudou empresas a faturarem mais de R$ 50 milhões. 
-                Especialista em vendas consultivas e neuromarketing.
-            </p>
+            <h2>O que dizem nossos alunos</h2>
+            <div class="testimonial">
+                <p>"O curso transformou nosso casamento. Voltamos a nos entender e rir juntos." - Maria e João</p>
+            </div>
+            <div class="testimonial">
+                <p>"As ferramentas são práticas e mudaram a dinâmica da nossa casa." - Ana e Carlos</p>
+            </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="final-cta">
+    <!-- Preço -->
+    <section class="pricing">
         <div class="container">
-            <h2>Garanta sua vaga agora</h2>
-            <p style="margin-bottom:20px;">Workshop gravado · Acesso imediato · Certificado de participação</p>
-            <div class="price-display"><sup>R$</sup>37</div>
-            <p class="price-note">Pagamento único · Acesso por 1 ano</p>
-            <a href="#" class="btn-cta">SIM, QUERO PARTICIPAR</a>
+            <h2>Invista no seu relacionamento</h2>
+            <div class="price-box">
+                <p>Acesso vitalício ao curso completo</p>
+                <div class="price">R$ 197</div>
+                <p>ou 12x de R$ 19,70</p>
+                <button class="btn">Garantir minha vaga</button>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2025 Workshop Vendas de Alto Impacto. Todos os direitos reservados.</p>
-            <p style="margin-top:8px;">CNPJ: 00.000.000/0001-00 · contato@workshopvendas.com.br</p>
+            <p>&copy; 2025 Conexão Casal. Todos os direitos reservados.</p>
         </div>
     </footer>
-
-    <!-- Countdown script -->
-    <script>
-        // Countdown target: 7 days from now (placeholder)
-        const target = new Date();
-        target.setDate(target.getDate() + 7);
-        target.setHours(23,59,59,0);
-
-        function updateCountdown() {
-            const now = new Date();
-            const diff = target - now;
-            if(diff <= 0) return;
-            const days = Math.floor(diff / (1000*60*60*24));
-            const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-            const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
-            document.getElementById('days').textContent = String(days).padStart(2,'0');
-            document.getElementById('hours').textContent = String(hours).padStart(2,'0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2,'0');
-        }
-        updateCountdown();
-        setInterval(updateCountdown, 60000);
-    </script>
 </body>
 </html>
